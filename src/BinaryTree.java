@@ -98,7 +98,7 @@ public class BinaryTree<T> implements BinaryTreeADT<T> {
     {
         if (root == null)
             return;
-        if (level == 1)
+        if (level == 1 && node != null)
             levelOrder.add((T) node.getElement());
         else if (level > 1) {
             currentLevel(node.getLeftChild(), level - 1);

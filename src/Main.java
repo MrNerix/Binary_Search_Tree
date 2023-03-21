@@ -2,16 +2,21 @@ public class Main {
     public static void main(String[] args) {
         BinaryTreePrint binaryTreePrint = new BinaryTreePrint();
 
-        BinaryTree binaryTree = new BinaryTree<>();
+        BinarySearchTree binaryTree = new BinarySearchTree<>();
 
-        binaryTree.root = new BinaryTreeNode<>(1);
+        binaryTree.root = new BinaryTreeNode<>(6);
 
-        binaryTree.root.setLeftChild(new BinaryTreeNode<>(2));
-        binaryTree.root.setRightChild(new BinaryTreeNode<>(3));
-        binaryTree.root.getLeftChild().setLeftChild(new BinaryTreeNode<>(4));
-        binaryTree.root.getLeftChild().setRightChild(new BinaryTreeNode<>(5));
-        binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(6));
-        binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(7));
+
+        binaryTree.insert(binaryTree.getRoot(),4);
+        binaryTree.insert(binaryTree.getRoot(),8);
+        binaryTree.insert(binaryTree.getRoot(),3);
+        binaryTree.insert(binaryTree.getRoot(),5);
+        binaryTree.insert(binaryTree.getRoot(),7);
+        binaryTree.insert(binaryTree.getRoot(),9);
+        binaryTree.removeElement(binaryTree.root,9);
+
+
+
 
         binaryTreePrint.printTree(binaryTree.root);
         System.out.println(binaryTree.contains(binaryTree.root, 6));
@@ -21,6 +26,7 @@ public class Main {
         System.out.println(binaryTree.postOrder(binaryTree.root));
         System.out.println(binaryTree.levelOrder(binaryTree.root));
         System.out.println(binaryTree.height(binaryTree.root));
+
 
 
 

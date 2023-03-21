@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05dcb178-c694-44fe-b1ab-b4a32ac964b1" name="Changes" comment="First phase, A Binary Tree.">
-      <change afterPath="$PROJECT_DIR$/src/UnitTests.java" afterDir="false" />
+    <list default="true" id="05dcb178-c694-44fe-b1ab-b4a32ac964b1" name="Changes" comment="First phase, added methods and Unit Tests.">
+      <change afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADS1_Assignment_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ADS1_Assignment_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BinaryTreeADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryTreeADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +33,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/coding/ADS1/Assignment_1/ADS1_Assignment_1/ADS1_Postfix_Calculator"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/coding/ADS1/Assignment_1/ADS1_Assignment_1/ADS1_Postfix_Calculator&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
@@ -54,7 +53,7 @@
       <recent name="C:\coding\ADS1\Assignment_2\ADS1_Assignment_2\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UnitTests">
+  <component name="RunManager" selected="JUnit.UnitTests.testFindMax">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ADS1_Assignment_2" />
@@ -71,31 +70,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnitTests.testLevelOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnitTests.testFindMax" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ADS1_Assignment_2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UnitTests" />
-      <option name="METHOD_NAME" value="testLevelOrder" />
+      <option name="METHOD_NAME" value="testFindMax" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnitTests.testPostOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnitTests.testFindMin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ADS1_Assignment_2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UnitTests" />
-      <option name="METHOD_NAME" value="testPostOrder" />
+      <option name="METHOD_NAME" value="testFindMin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnitTests.testPreOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UnitTests.testRemoveElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ADS1_Assignment_2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UnitTests" />
-      <option name="METHOD_NAME" value="testPreOrder" />
+      <option name="METHOD_NAME" value="testRemoveElement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UnitTests.testFindMax" />
         <item itemvalue="JUnit.UnitTests" />
-        <item itemvalue="JUnit.UnitTests.testLevelOrder" />
-        <item itemvalue="JUnit.UnitTests.testPostOrder" />
+        <item itemvalue="JUnit.UnitTests.testRemoveElement" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UnitTests.testPreOrder" />
+        <item itemvalue="JUnit.UnitTests.testFindMin" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +119,9 @@
       <option name="presentableId" value="Default" />
       <updated>1679159291672</updated>
       <workItem from="1679159293652" duration="3541000" />
-      <workItem from="1679327958570" duration="13509000" />
+      <workItem from="1679327958570" duration="15832000" />
+      <workItem from="1679345040820" duration="135000" />
+      <workItem from="1679398787977" duration="7383000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1679159487435</created>
@@ -136,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679331431511</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First phase, added methods and Unit Tests.">
+      <created>1679341813882</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679341813882</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="First phase, A Binary Tree." />
-    <option name="LAST_COMMIT_MESSAGE" value="First phase, A Binary Tree." />
+    <MESSAGE value="First phase, added methods and Unit Tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="First phase, added methods and Unit Tests." />
   </component>
 </project>

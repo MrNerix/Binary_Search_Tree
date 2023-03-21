@@ -168,4 +168,65 @@ public class UnitTests {
         assertEquals(binaryTree.height(binaryTree.root), 3);
     }
 
+    @Test
+    public void testInsert(){
+        BinarySearchTree binaryTree = new BinarySearchTree<>();
+
+        binaryTree.root = new BinaryTreeNode<>(6);
+
+        binaryTree.insert(binaryTree.getRoot(),4);
+        binaryTree.insert(binaryTree.getRoot(),8);
+        binaryTree.insert(binaryTree.getRoot(),3);
+        binaryTree.insert(binaryTree.getRoot(),5);
+        binaryTree.insert(binaryTree.getRoot(),7);
+        binaryTree.insert(binaryTree.getRoot(),9);
+
+        assertEquals(binaryTree.height(binaryTree.root), 3);
+    }
+    @Test
+    public void testFindMin(){
+        BinarySearchTree binaryTree = new BinarySearchTree<>();
+
+        binaryTree.root = new BinaryTreeNode<>(6);
+
+        binaryTree.insert(binaryTree.getRoot(),4);
+        binaryTree.insert(binaryTree.getRoot(),8);
+        binaryTree.insert(binaryTree.getRoot(),3);
+        binaryTree.insert(binaryTree.getRoot(),5);
+        binaryTree.insert(binaryTree.getRoot(),7);
+        binaryTree.insert(binaryTree.getRoot(),9);
+
+        assertEquals(binaryTree.findMin(binaryTree.root), 3);
+    }
+    @Test
+    public void testFindMax(){
+        BinarySearchTree binaryTree = new BinarySearchTree<>();
+
+        binaryTree.root = new BinaryTreeNode<>(6);
+
+        binaryTree.insert(binaryTree.getRoot(),4);
+        binaryTree.insert(binaryTree.getRoot(),8);
+        binaryTree.insert(binaryTree.getRoot(),3);
+        binaryTree.insert(binaryTree.getRoot(),5);
+        binaryTree.insert(binaryTree.getRoot(),7);
+        binaryTree.insert(binaryTree.getRoot(),9);
+
+        assertEquals(binaryTree.findMax(binaryTree.root), 9);
+    }
+    @Test
+    public void testRemoveElement(){
+        BinarySearchTree binaryTree = new BinarySearchTree<>();
+
+        binaryTree.root = new BinaryTreeNode<>(6);
+
+        binaryTree.insert(binaryTree.getRoot(),4);
+        binaryTree.insert(binaryTree.getRoot(),8);
+        binaryTree.insert(binaryTree.getRoot(),3);
+        binaryTree.insert(binaryTree.getRoot(),5);
+        binaryTree.insert(binaryTree.getRoot(),7);
+        binaryTree.insert(binaryTree.getRoot(),9);
+
+        assertEquals(binaryTree.height(binaryTree.root), 3);
+    }
+
 }
