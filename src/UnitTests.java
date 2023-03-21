@@ -1,7 +1,6 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -27,7 +26,7 @@ public class UnitTests {
     public void testIsEmpty(){
         BinaryTree binaryTree = new BinaryTree<>();
 
-        assertEquals(binaryTree.isEmpty(), true);
+        assertTrue(binaryTree.isEmpty());
     }
 
     @Test
@@ -43,7 +42,7 @@ public class UnitTests {
         binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(6));
         binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(7));
 
-        assertEquals(binaryTree.size(binaryTree.root), 7);
+        assertEquals(binaryTree.size(), 7);
     }
     @Test
     public void testContains(){
@@ -58,7 +57,7 @@ public class UnitTests {
         binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(6));
         binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(7));
 
-        assertEquals(binaryTree.contains(binaryTree.root, 3), true);
+        assertEquals(binaryTree.contains( 3), true);
     }
     @Test
     public void testInOrder(){
@@ -81,7 +80,7 @@ public class UnitTests {
         result.add(3);
         result.add(7);
 
-        assertEquals(binaryTree.inOrder(binaryTree.root), result);
+        assertEquals(binaryTree.inOrder(), result);
     }
     @Test
     public void testPreOrder(){
@@ -104,7 +103,7 @@ public class UnitTests {
         result.add(6);
         result.add(7);
 
-        assertEquals(binaryTree.preOrder(binaryTree.root), result);
+        assertEquals(binaryTree.preOrder(), result);
     }
     @Test
     public void testPostOrder(){
@@ -127,7 +126,7 @@ public class UnitTests {
         result.add(3);
         result.add(1);
 
-        assertEquals(binaryTree.postOrder(binaryTree.root), result);
+        assertEquals(binaryTree.postOrder(), result);
     }
     @Test
     public void testLevelOrder(){
@@ -150,7 +149,7 @@ public class UnitTests {
         result.add(6);
         result.add(7);
 
-        assertEquals(binaryTree.levelOrder(binaryTree.root), result);
+        assertEquals(binaryTree.levelOrder(), result);
     }
     @Test
     public void testHeight(){
@@ -165,7 +164,7 @@ public class UnitTests {
         binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(6));
         binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(7));
 
-        assertEquals(binaryTree.height(binaryTree.root), 3);
+        assertEquals(binaryTree.height(), 3);
     }
 
     @Test
@@ -174,14 +173,14 @@ public class UnitTests {
 
         binaryTree.root = new BinaryTreeNode<>(6);
 
-        binaryTree.insert(binaryTree.getRoot(),4);
-        binaryTree.insert(binaryTree.getRoot(),8);
-        binaryTree.insert(binaryTree.getRoot(),3);
-        binaryTree.insert(binaryTree.getRoot(),5);
-        binaryTree.insert(binaryTree.getRoot(),7);
-        binaryTree.insert(binaryTree.getRoot(),9);
+        binaryTree.insert(4);
+        binaryTree.insert(8);
+        binaryTree.insert(3);
+        binaryTree.insert(5);
+        binaryTree.insert(7);
+        binaryTree.insert(9);
 
-        assertEquals(binaryTree.height(binaryTree.root), 3);
+        assertEquals(binaryTree.height(), 3);
     }
     @Test
     public void testFindMin(){
@@ -189,14 +188,14 @@ public class UnitTests {
 
         binaryTree.root = new BinaryTreeNode<>(6);
 
-        binaryTree.insert(binaryTree.getRoot(),4);
-        binaryTree.insert(binaryTree.getRoot(),8);
-        binaryTree.insert(binaryTree.getRoot(),3);
-        binaryTree.insert(binaryTree.getRoot(),5);
-        binaryTree.insert(binaryTree.getRoot(),7);
-        binaryTree.insert(binaryTree.getRoot(),9);
+        binaryTree.insert(4);
+        binaryTree.insert(8);
+        binaryTree.insert(3);
+        binaryTree.insert(5);
+        binaryTree.insert(7);
+        binaryTree.insert(9);
 
-        assertEquals(binaryTree.findMin(binaryTree.root), 3);
+        assertEquals(binaryTree.findMin(), 3);
     }
     @Test
     public void testFindMax(){
@@ -204,14 +203,14 @@ public class UnitTests {
 
         binaryTree.root = new BinaryTreeNode<>(6);
 
-        binaryTree.insert(binaryTree.getRoot(),4);
-        binaryTree.insert(binaryTree.getRoot(),8);
-        binaryTree.insert(binaryTree.getRoot(),3);
-        binaryTree.insert(binaryTree.getRoot(),5);
-        binaryTree.insert(binaryTree.getRoot(),7);
-        binaryTree.insert(binaryTree.getRoot(),9);
+        binaryTree.insert(4);
+        binaryTree.insert(8);
+        binaryTree.insert(3);
+        binaryTree.insert(5);
+        binaryTree.insert(7);
+        binaryTree.insert(9);
 
-        assertEquals(binaryTree.findMax(binaryTree.root), 9);
+        assertEquals(binaryTree.findMax(), 9);
     }
     @Test
     public void testRemoveElement(){
@@ -219,14 +218,15 @@ public class UnitTests {
 
         binaryTree.root = new BinaryTreeNode<>(6);
 
-        binaryTree.insert(binaryTree.getRoot(),4);
-        binaryTree.insert(binaryTree.getRoot(),8);
-        binaryTree.insert(binaryTree.getRoot(),3);
-        binaryTree.insert(binaryTree.getRoot(),5);
-        binaryTree.insert(binaryTree.getRoot(),7);
-        binaryTree.insert(binaryTree.getRoot(),9);
+        binaryTree.insert(4);
+        binaryTree.insert(8);
+        binaryTree.insert(3);
+        binaryTree.insert(5);
+        binaryTree.insert(7);
+        binaryTree.insert(9);
+        binaryTree.removeElement( 9);
 
-        assertEquals(binaryTree.height(binaryTree.root), 3);
+        assertEquals(binaryTree.height(), 3);
     }
     @Test
     public void testReBalance(){
@@ -239,10 +239,10 @@ public class UnitTests {
         binaryTree.root.setRightChild(new BinaryTreeNode<>(8));
         binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(7));
         binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(9));
-        binaryTree.reBalance(binaryTree.inOrder(binaryTree.root), 0, binaryTree.size(binaryTree.root) - 1);
+        binaryTree.rebalance();
 
 
-        assertEquals(binaryTree.height(binaryTree.root), 3);
+        assertEquals(binaryTree.height(), 3);
     }
 
 }

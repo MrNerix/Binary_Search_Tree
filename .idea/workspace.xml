@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05dcb178-c694-44fe-b1ab-b4a32ac964b1" name="Changes" comment="Second phase, added BinarySearchTree class with findMax, findMin, insert and remove methods and Unit Tests for each method.">
+    <list default="true" id="05dcb178-c694-44fe-b1ab-b4a32ac964b1" name="Changes" comment="Third phase, added reBalance method and Unit Test for the method.">
+      <change afterPath="$PROJECT_DIR$/src/BinarySearchTreeADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BinaryTreeADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinaryTreeADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UnitTests.java" afterDir="false" />
     </list>
@@ -15,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -102,9 +105,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.UnitTests" />
         <item itemvalue="JUnit.UnitTests.testReBalance" />
         <item itemvalue="JUnit.UnitTests.testFindMax" />
-        <item itemvalue="JUnit.UnitTests" />
         <item itemvalue="JUnit.UnitTests.testRemoveElement" />
       </list>
     </recent_temporary>
@@ -121,7 +124,7 @@
       <workItem from="1679327958570" duration="15832000" />
       <workItem from="1679345040820" duration="135000" />
       <workItem from="1679398787977" duration="8118000" />
-      <workItem from="1679411978582" duration="3672000" />
+      <workItem from="1679411978582" duration="10247000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1679159487435</created>
@@ -151,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679406634710</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Third phase, added reBalance method and Unit Test for the method.">
+      <created>1679418370341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679418370341</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +183,7 @@
     <MESSAGE value="First phase, A Binary Tree." />
     <MESSAGE value="First phase, added methods and Unit Tests." />
     <MESSAGE value="Second phase, added BinarySearchTree class with findMax, findMin, insert and remove methods and Unit Tests for each method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second phase, added BinarySearchTree class with findMax, findMin, insert and remove methods and Unit Tests for each method." />
+    <MESSAGE value="Third phase, added reBalance method and Unit Test for the method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Third phase, added reBalance method and Unit Test for the method." />
   </component>
 </project>

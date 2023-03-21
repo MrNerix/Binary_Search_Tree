@@ -2,11 +2,6 @@ import java.util.ArrayList;
 
 public class BinaryTree<T> implements BinaryTreeADT<T> {
     BinaryTreeNode root;
-    ArrayList<T> inOrder = new ArrayList<T>();
-    ArrayList<T> preOrder = new ArrayList<T>();
-    ArrayList<T> postOrder = new ArrayList<T>();
-    ArrayList<T> levelOrder = new ArrayList<T>();
-
     public BinaryTree(){
         root = null;
     }
@@ -27,7 +22,10 @@ public class BinaryTree<T> implements BinaryTreeADT<T> {
     }
 
     @Override
-    public int size(BinaryTreeNode node) {
+    public int size() {
+        return size(root);
+    }
+    private int size(BinaryTreeNode node){
         if (node == null)
             return 0;
         else
@@ -35,7 +33,10 @@ public class BinaryTree<T> implements BinaryTreeADT<T> {
     }
 
     @Override
-    public boolean contains(BinaryTreeNode node,T element) {
+    public boolean contains(T element) {
+        return contains(root, element);
+    }
+    private boolean contains(BinaryTreeNode node,T element){
         if(node == null)
             return false;
         if(node.getElement() == element)
@@ -50,65 +51,75 @@ public class BinaryTree<T> implements BinaryTreeADT<T> {
     }
 
     @Override
-    public ArrayList<T> inOrder(BinaryTreeNode node) {
-
-
+    public ArrayList<T> inOrder() {
+        ArrayList<T> inOrder = new ArrayList<T>();
+        return inOrder(root, inOrder);
+    }
+    private ArrayList<T> inOrder(BinaryTreeNode node, ArrayList<T> inOrder){
         if (node == null)
             return null;
-        inOrder(node.getLeftChild());
-
+        inOrder(node.getLeftChild(), inOrder);
         inOrder.add( (T) node.getElement());
-
-        inOrder(node.getRightChild());
+        inOrder(node.getRightChild(), inOrder);
 
         return inOrder;
     }
 
     @Override
-    public ArrayList<T> preOrder(BinaryTreeNode node) {
+    public ArrayList<T> preOrder() {
+        ArrayList<T> preOrder = new ArrayList<T>();
+        return preOrder(root, preOrder);
+    }
+    private ArrayList<T> preOrder(BinaryTreeNode node, ArrayList<T> preOrder){
         if (node == null)
             return null;
         preOrder.add( (T) node.getElement());
 
-        preOrder(node.getLeftChild());
-        preOrder(node.getRightChild());
+        preOrder(node.getLeftChild(), preOrder);
+        preOrder(node.getRightChild(), preOrder);
         return preOrder;
     }
 
     @Override
-    public ArrayList<T> postOrder(BinaryTreeNode node) {
+    public ArrayList<T> postOrder() {
+        ArrayList<T> postOrder = new ArrayList<T>();
+        return postOrder(root, postOrder);
+    }
+    private ArrayList<T> postOrder(BinaryTreeNode node, ArrayList<T> postOrder){
         if (node == null)
             return null;
-        postOrder(node.getLeftChild());
-        postOrder(node.getRightChild());
+        postOrder(node.getLeftChild(), postOrder);
+        postOrder(node.getRightChild(), postOrder);
         postOrder.add((T) node.getElement());
         return postOrder;
     }
 
     @Override
-    public ArrayList<T> levelOrder(BinaryTreeNode node) {
+    public ArrayList<T> levelOrder() {
+        ArrayList<T> levelOrder = new ArrayList<>();
         for (int i = 1; i <= height(root); i++){
-            currentLevel(root, i);
+            currentLevel(root, i, levelOrder);
         }
-
 
         return levelOrder;
     }
-    void currentLevel(BinaryTreeNode node, int level)
+    void currentLevel(BinaryTreeNode node, int level, ArrayList<T> levelOrder)
     {
-        if (root == null)
+        if (node == null)
             return;
-        if (level == 1 && node != null)
+        if (level == 1)
             levelOrder.add((T) node.getElement());
         else if (level > 1) {
-            currentLevel(node.getLeftChild(), level - 1);
-            currentLevel(node.getRightChild(), level - 1);
+            currentLevel(node.getLeftChild(), level - 1, levelOrder);
+            currentLevel(node.getRightChild(), level - 1, levelOrder);
         }
     }
 
     @Override
-    public int height(BinaryTreeNode temp) {
-
+    public int height() {
+        return height(root);
+    }
+    private int height(BinaryTreeNode temp){
         if(root == null){
             return -1;
         }else {
@@ -124,7 +135,6 @@ public class BinaryTree<T> implements BinaryTreeADT<T> {
             int max = (leftHeight > rightHeight) ? leftHeight : rightHeight;
 
             return (max + 1);
-
         }
     }
 }

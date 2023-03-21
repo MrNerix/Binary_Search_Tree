@@ -1,11 +1,16 @@
 import java.util.ArrayList;
 
-public class BinarySearchTree<T> extends BinaryTree{
+public class BinarySearchTree<T> extends BinaryTree<T> implements BinarySearchTreeADT<T>{
 
-    public BinaryTreeNode insert(BinaryTreeNode node, T element){
+    @Override
+    public boolean insert(T element){
+        insert(root, element);
+        return true;
+    }
+    private BinaryTreeNode<T> insert(BinaryTreeNode<T> node, T element){
 
         if (node == null) {
-            node = new BinaryTreeNode(element);
+            node = new BinaryTreeNode<>(element);
             return node;
         }
 
@@ -17,8 +22,17 @@ public class BinarySearchTree<T> extends BinaryTree{
         return node;
     }
 
-    public BinaryTreeNode removeElement(BinaryTreeNode node, T element)
+    @Override
+    public boolean removeElement(T element)
     {
+        if(!contains(element))
+            return false;
+        else {
+            removeElement(root, element);
+            return true;
+        }
+    }
+    private BinaryTreeNode<T> removeElement(BinaryTreeNode<T> node, T element){
         if (node == null)
             return node;
         if ((Integer)element < (Integer) node.getElement())
@@ -34,33 +48,43 @@ public class BinarySearchTree<T> extends BinaryTree{
 
             node.setElement(findMin(node.getRightChild()));
 
-            node.setRightChild(removeElement(node.getRightChild(), (T) node.getElement()));
+            node.setRightChild(removeElement(node.getRightChild(), node.getElement()));
         }
-
         return node;
     }
-
-    public int findMin(BinaryTreeNode node)
+    @Override
+    public T findMin()
     {
-        int minv = (Integer) node.getElement();
+        return (T) findMin(root);
+    }
+    private T findMin(BinaryTreeNode<T> node){
+        T minv = (T) node.getElement();
         while (node.getLeftChild() != null) {
-            minv = (Integer) node.getLeftChild().getElement();
+            minv = (T) node.getLeftChild().getElement();
             node = node.getLeftChild();
         }
         return minv;
     }
-    public int findMax(BinaryTreeNode node)
+    @Override
+    public T findMax()
     {
-        int maxv = (Integer) node.getElement();
+        return findMax(root);
+    }
+    private T findMax(BinaryTreeNode node){
+        T maxv = (T) node.getElement();
         while (node.getRightChild() != null) {
-            maxv = (Integer) node.getRightChild().getElement();
+            maxv = (T) node.getRightChild().getElement();
             node = node.getRightChild();
         }
         return maxv;
     }
+    @Override
+    public void rebalance(){
+        root = rebalance(inOrder(), 0, size() - 1);
+    }
 
 
-    public BinaryTreeNode<T> reBalance(ArrayList<T> elements, int start, int end){
+    private BinaryTreeNode<T> rebalance(ArrayList<T> elements, int start, int end){
         if (start > end)
             return null;
 
@@ -69,8 +93,8 @@ public class BinarySearchTree<T> extends BinaryTree{
 
         BinaryTreeNode node = new BinaryTreeNode(element);
 
-        node.setLeftChild(reBalance(elements, start, mid - 1));
-        node.setRightChild(reBalance(elements, mid + 1, end));
+        node.setLeftChild(rebalance(elements, start, mid - 1));
+        node.setRightChild(rebalance(elements, mid + 1, end));
 
         return node;
     }

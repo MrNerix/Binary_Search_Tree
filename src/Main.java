@@ -1,49 +1,41 @@
 public class Main {
     public static void main(String[] args) {
-        /*
-        BinaryTreePrint binaryTreePrint = new BinaryTreePrint();
-
-        BinarySearchTree binaryTree = new BinarySearchTree<>();
-
-        binaryTree.root = new BinaryTreeNode<>(6);
-
-
-        binaryTree.insert(binaryTree.getRoot(),4);
-        binaryTree.insert(binaryTree.getRoot(),8);
-        binaryTree.insert(binaryTree.getRoot(),3);
-        binaryTree.insert(binaryTree.getRoot(),5);
-        binaryTree.insert(binaryTree.getRoot(),7);
-        binaryTree.insert(binaryTree.getRoot(),9);
-        binaryTree.removeElement(binaryTree.root,9);
-
-*/
         BinaryTreePrint binaryTreePrint = new BinaryTreePrint();
         BinarySearchTree binaryTree = new BinarySearchTree<>();
 
-        binaryTree.root = new BinaryTreeNode<>(6);
+        binaryTree.root = new BinaryTreeNode<>(10);
 
-        binaryTree.root.setLeftChild(new BinaryTreeNode<>(4));
-        binaryTree.root.setRightChild(new BinaryTreeNode<>(8));
-        //binaryTree.root.getLeftChild().setLeftChild(new BinaryTreeNode<>(3));
-        //binaryTree.root.getLeftChild().setRightChild(new BinaryTreeNode<>(5));
-        binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(7));
-        binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(9));
-        ;
+        binaryTree.root.setLeftChild(new BinaryTreeNode<>(5));
+        binaryTree.root.setRightChild(new BinaryTreeNode<>(20));
+        binaryTree.root.getLeftChild().setLeftChild(new BinaryTreeNode<>(3));
+        binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(11));
+        binaryTree.root.getRightChild().getLeftChild().setRightChild(new BinaryTreeNode<>(19));
+        binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(25));
 
-
+        System.out.println("The Tree before re-balancing:");
         binaryTreePrint.printTree(binaryTree.root);
-        binaryTreePrint.printTree(binaryTree.reBalance(binaryTree.inOrder(binaryTree.root), 0, binaryTree.size(binaryTree.root) - 1));
-        System.out.println(binaryTree.contains(binaryTree.root, 6));
-        System.out.println(binaryTree.size(binaryTree.root));
-        System.out.println(binaryTree.inOrder(binaryTree.root));
-        System.out.println(binaryTree.preOrder(binaryTree.root));
-        System.out.println(binaryTree.postOrder(binaryTree.root));
-        System.out.println(binaryTree.levelOrder(binaryTree.root));
-        System.out.println(binaryTree.height(binaryTree.root));
-
-
-
-
+        binaryTree.rebalance();
+        System.out.println("The Tree after re-balancing:");
+        binaryTreePrint.printTree(binaryTree.root);
+        System.out.println();
+        System.out.println("Does it contain the number 6: ");
+        System.out.println(binaryTree.contains( 6));
+        System.out.println("Size:");
+        System.out.println(binaryTree.size());
+        System.out.println("In:");
+        System.out.println(binaryTree.inOrder());
+        System.out.println("Pre:");
+        System.out.println(binaryTree.preOrder());
+        System.out.println("Post:");
+        System.out.println(binaryTree.postOrder());
+        System.out.println("Level:");
+        System.out.println(binaryTree.levelOrder());
+        System.out.println("Height:");
+        System.out.println(binaryTree.height());
+        System.out.println("Did it insert 21:");
+        System.out.println(binaryTree.insert(21));
+        System.out.println("Did it remove 21:");
+        System.out.println(binaryTree.removeElement(21));
 
     }
 }
