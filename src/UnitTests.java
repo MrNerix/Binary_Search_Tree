@@ -228,5 +228,21 @@ public class UnitTests {
 
         assertEquals(binaryTree.height(binaryTree.root), 3);
     }
+    @Test
+    public void testReBalance(){
+        BinaryTreePrint binaryTreePrint = new BinaryTreePrint();
+        BinarySearchTree binaryTree = new BinarySearchTree<>();
+
+        binaryTree.root = new BinaryTreeNode<>(6);
+
+        binaryTree.root.setLeftChild(new BinaryTreeNode<>(4));
+        binaryTree.root.setRightChild(new BinaryTreeNode<>(8));
+        binaryTree.root.getRightChild().setLeftChild(new BinaryTreeNode<>(7));
+        binaryTree.root.getRightChild().setRightChild(new BinaryTreeNode<>(9));
+        binaryTree.reBalance(binaryTree.inOrder(binaryTree.root), 0, binaryTree.size(binaryTree.root) - 1);
+
+
+        assertEquals(binaryTree.height(binaryTree.root), 3);
+    }
 
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BinarySearchTree<T> extends BinaryTree{
 
     public BinaryTreeNode insert(BinaryTreeNode node, T element){
@@ -55,6 +57,22 @@ public class BinarySearchTree<T> extends BinaryTree{
             node = node.getRightChild();
         }
         return maxv;
+    }
+
+
+    public BinaryTreeNode<T> reBalance(ArrayList<T> elements, int start, int end){
+        if (start > end)
+            return null;
+
+        int mid = (start + end) / 2;
+        T element = elements.get(mid);
+
+        BinaryTreeNode node = new BinaryTreeNode(element);
+
+        node.setLeftChild(reBalance(elements, start, mid - 1));
+        node.setRightChild(reBalance(elements, mid + 1, end));
+
+        return node;
     }
 
 }
